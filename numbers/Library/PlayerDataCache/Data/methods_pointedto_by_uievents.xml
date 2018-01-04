@@ -1,0 +1,100 @@
+<linker>
+	<assembly fullname="Assembly-CSharp">
+		<type fullname="MenuController">
+			<method name="SelectMode"/>
+			<method name="MakeButtonSound"/>
+			<method name="MakeButtonSound"/>
+			<method name="OpenPanel"/>
+			<method name="MakeButtonSound"/>
+			<method name="OpenPanel"/>
+			<method name="MakeButtonSound"/>
+			<method name="OpenPanel"/>
+			<method name="MakeButtonSound"/>
+			<method name="MakeButtonSound"/>
+			<method name="MakeButtonSound"/>
+			<method name="OpenDeveloperTools"/>
+			<method name="OpenPanel"/>
+			<method name="MakeButtonSound"/>
+			<method name="SelectMode"/>
+			<method name="MakeButtonSound"/>
+			<method name="SelectMode"/>
+			<method name="MakeButtonSound"/>
+			<method name="OpenPanel"/>
+			<method name="MakeButtonSound"/>
+			<method name="MakeButtonSound"/>
+			<method name="AreYouSure"/>
+			<method name="MakeButtonSound"/>
+			<method name="AreYouSure"/>
+			<method name="MakeButtonSound"/>
+			<method name="OpenPanel"/>
+			<method name="MakeButtonSound"/>
+		</type>
+		<type fullname="SettingsController">
+			<method name="CreditsOn"/>
+			<method name="SetLanguage"/>
+			<method name="MuteSFX"/>
+			<method name="MuteSFX"/>
+			<method name="ResetProgress"/>
+			<method name="MuteVolume"/>
+			<method name="SetVolume"/>
+			<method name="CreditsOFF"/>
+			<method name="MuteVolume"/>
+		</type>
+		<type fullname="LevelUIController">
+			<method name="ShowAllCards"/>
+			<method name="BackButton"/>
+			<method name="ToggleMenuAnim"/>
+			<method name="BackButton"/>
+			<method name="RestartLevel"/>
+			<method name="NextLevel"/>
+			<method name="HowToPlay"/>
+			<method name="ToggleMenuAnim"/>
+			<method name="RestartLevel"/>
+		</type>
+		<type fullname="MusicController">
+			<method name="MakeButtonSound"/>
+			<method name="MakeButtonSound"/>
+			<method name="MakeButtonSound"/>
+			<method name="MakeButtonSound"/>
+			<method name="MakeButtonSound"/>
+			<method name="MakeButtonSound"/>
+			<method name="MakeButtonSound"/>
+			<method name="MakeButtonSound"/>
+			<method name="MakeButtonSound"/>
+			<method name="MakeButtonSound"/>
+		</type>
+		<type fullname="HowToPlay">
+			<method name="HideHowToPlayScreen"/>
+			<method name="NextButton"/>
+			<method name="NextButton"/>
+		</type>
+		<type fullname="CardSelection">
+			<method name="OnCardClikced"/>
+		</type>
+		<type fullname="LevGenUIController">
+			<method name="LoadLevels_ButtonPressed"/>
+			<method name="ResetTable_ButtonPressed"/>
+			<method name="Back_ButtonPressed"/>
+			<method name="NextLevel_ButtonPressed"/>
+			<method name="Save_ButtonPressed"/>
+			<method name="CreateNewLevel_ButtonPressed"/>
+			<method name="PreviousLevel_ButtonPressed"/>
+		</type>
+		<type fullname="DropdownController">
+			<method name="DifficultyChooser"/>
+			<method name="LevelModeChooser"/>
+		</type>
+	</assembly>
+	<assembly fullname="UnityEngine">
+		<type fullname="UnityEngine.GameObject">
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+		</type>
+	</assembly>
+</linker>
