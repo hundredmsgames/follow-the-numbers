@@ -77,20 +77,21 @@ public static class ProgressController
 		return progress;
 	}
 
-	public static bool IsRecordExist(LevelMode levelMode, int levelNumber)
+	public static bool IsRewarded(LevelMode levelMode, int levelNumber)
 	{
-		string progressKey = string.Format("{0}~{1}", levelMode, levelNumber);
-		bool completed = false;
+		string rewardKey = string.Format("{0}~{1} rewarded", levelMode, levelNumber);
+		bool rewarded = false;
 
-		if(PlayerPrefs.HasKey(progressKey) == false)
-			return completed;
+		if(PlayerPrefs.HasKey(rewardKey) == false)
+		{
+			PlayerPrefs.SetString(rewardKey, true.ToString());
+			return rewarded;
+		}
 
-		string progressValue = PlayerPrefs.GetString(progressKey);
-		string[] progressArr = progressValue.Split('~');
+		string rewardValue = PlayerPrefs.GetString(rewardKey);
+		rewarded = bool.Parse(rewardValue);
 
-		completed = bool.Parse(progressArr[4]);
-
-		return completed;
+		return rewarded;
 	}
 
 	public static bool IsHowToPlayShowed()

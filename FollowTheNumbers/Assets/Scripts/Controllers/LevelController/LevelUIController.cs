@@ -23,6 +23,7 @@ public class LevelUIController : MonoBehaviour
 	public TextMeshProUGUI wrongTriesText;
 	public TextMeshProUGUI bestCountText;
 	public TextMeshProUGUI remainingTimeText;
+	public TextMeshProUGUI rewardText;
 	public Image starImage;
 	public Image[] starLines;
 	public Animator optionAnimator;
@@ -61,6 +62,7 @@ public class LevelUIController : MonoBehaviour
 			HowToPlay(false);
 			showCardsButton.interactable = false;
 			optionsButton.interactable   = false;
+			LevelController.Instance.levelPaused = true;
 		}
 	}
 
@@ -359,20 +361,36 @@ public class LevelUIController : MonoBehaviour
 		levelText.text = string.Format("{0} {1}", StringLiterals.levelText[(int)DataTransfer.language], levelNo);
 	}
 
+	public void SetRewardText(int reward)
+	{
+		if(reward > 0)
+			rewardText.text = string.Format("+{0} {1}", reward, StringLiterals.rewardSecText[(int) DataTransfer.language]);
+		else
+			rewardText.text = "";
+	}
+
 	public void HowToPlay(bool animAct)
 	{
         howToPlayScreen.SetActive(true);
-		ToggleMenuAnim();
-		LevelController.Instance.levelPaused = !LevelController.Instance.levelPaused;
-    }
+
+		if(animAct == true)
+		{
+			ToggleMenuAnim();
+			LevelController.Instance.levelPaused = !LevelController.Instance.levelPaused;
+		}
+	}
    
 
 	public void ToggleMenuAnim()
 	{
 		menuAnimOpen = !menuAnimOpen;
 
+		showCardsButton.interactable = !menuAnimOpen;
 		LevelController.Instance.levelPaused = menuAnimOpen;
 		optionAnimator.SetBool("open", menuAnimOpen);
+
+		if(LevelController.Instance.showingAllCards == true)
+			ShowAllCards();
 
         if (LevelController.Instance.levelPaused == true)
         {

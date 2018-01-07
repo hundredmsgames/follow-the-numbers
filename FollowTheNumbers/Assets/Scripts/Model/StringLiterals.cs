@@ -127,19 +127,10 @@ public static class StringLiterals
 
     #region Level
 
-
     public static string[] levelText =
 	{
 		"LEVEL",
 		"LEVEL"
-	};
-
-
-
-	public static string[] quitButton =
-	{
-		"Quit",
-		"Çıkış"
 	};
 
 	public static string[] levelCompletedText =
@@ -148,22 +139,10 @@ public static class StringLiterals
 		"SONUÇ"
 	};
 
-	public static string[] backButton =
+	public static string[] rewardSecText =
 	{
-		"Back",
-		"Geri"
-	};
-
-	public static string[] nextButton =
-	{
-		"Next",
-		"İleri"
-	};
-
-	public static string[] restartButton =
-	{
-		"Restart",
-		"Tekrar"
+		" sec",
+		" sn"
 	};
 
     public static List<string[]> scripts = new List<string[]>()
@@ -217,27 +196,30 @@ public static class StringLiterals
 
     };
 
-    //
     public static string[] rewardScreenText =
     {
         "You can earn time by watching ads.",
         "Buradan reklam izleyerek zaman kazanabilirsiniz."
     };
+
     public static string[] rewardScreen4Sec =
-   {
+	{
         "Earn\n4 secs",
         "4 sn\nkazan"
     };
-    public static string[] rewardScreen8Sec =
+    
+	public static string[] rewardScreen8Sec =
     {
        "Earn\n8 secs",
         "8 sn\nkazan"
     };
-    public static string[] rewardScreenNoButton =
-   {
+    
+	public static string[] rewardScreenNoButton =
+	{
        "No, thanks",
         "Hayır,\nTeşekkürler"
     };
+
     #endregion
 
     #region levelPicker

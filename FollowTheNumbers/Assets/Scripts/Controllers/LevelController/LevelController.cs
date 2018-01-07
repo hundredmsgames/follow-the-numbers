@@ -201,15 +201,20 @@ public class LevelController : MonoBehaviour
 
 		starPercent = ClampStarPercent(starPercent);
 
-		if(ProgressController.IsRecordExist(levelMode, levelNo) == false)
+		int reward = 0;
+		if(starPercent != 0f && ProgressController.IsRewarded(levelMode, levelNo) == false)
 		{
 			if(starPercent <= starPercents[0])
-				DataTransfer.remainingTime += 1f;
+				reward = 1;
 			else if(starPercent <= starPercents[1])
-				DataTransfer.remainingTime += 3f;
+				reward = 3;
 			else if(starPercent <= starPercents[2])
-				DataTransfer.remainingTime += 5f;
-		} 
+				reward = 5;
+
+			DataTransfer.remainingTime += reward;
+		}
+
+		UICont.SetRewardText(reward);
 
 		SaveProgress();
 		UICont.ToggleSucceedScreen();

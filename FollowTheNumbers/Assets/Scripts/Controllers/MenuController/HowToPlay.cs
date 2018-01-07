@@ -38,14 +38,9 @@ public class HowToPlay : MonoBehaviour {
     {
         index = 0;
         
-        // Burada oyunu başlatıyorum kaldığı yerden devam edecek
-        if (levelUIController.howToPlayScreen.activeSelf == true)
-        {
-			LevelController.Instance.levelPaused = false;
-            levelUIController.showCardsButton.interactable = true;
-            levelUIController.optionsButton.interactable = true;
-        }
-
+		LevelController.Instance.levelPaused = false;
+        levelUIController.showCardsButton.interactable = true;
+        levelUIController.optionsButton.interactable = true;
         howToPlayScreen.SetActive(false);
     }
    
