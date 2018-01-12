@@ -33,10 +33,10 @@ public class LevelController : MonoBehaviour
 	public bool levelCompleted;
 
 	// easy max 10, medium max 16, hard max 25
-	float[] tryUpperLimitMultiplier  = new float[]{1.0f, 1.0f, 1.0f};
-	float[] tryLowerLimitMultiplier  = new float[]{0.2f, 0.3f, 0.4f};
-	float[] timeUpperLimitMultiplier = new float[]{1.7f, 1.6f, 2.2f};
-	float[] timeLowerLimitMultiplier = new float[]{0.5f, 0.9f, 1.3f};
+	float[] tryUpperLimitMultiplier  = new float[]{0.9f, 0.9f, 1.0f};
+	float[] tryLowerLimitMultiplier  = new float[]{0.1f, 0.2f, 0.3f};
+	float[] timeUpperLimitMultiplier = new float[]{1.3f, 1.5f, 2.0f};
+	float[] timeLowerLimitMultiplier = new float[]{0.4f, 0.7f, 1.1f};
 
 	public int indexStarLines;
     public float fillSpeed = .7f;
@@ -312,15 +312,26 @@ public class LevelController : MonoBehaviour
 
 		ProgressController.SaveProgress(currLevelProgress);
 
+
+
 		// If there is no level or we could not get one star, do not unlock next level.
-		if(levelNo == levels.Count || starPercent < starPercents[0])
+		if(levelNo == levels.Count)
 		{
 			UICont.DisableNextButton();
 			return;
 		}
 
-		// We have a next level, so unlock it.
 		PlayerProgress nextLevelProgress = ProgressController.GetProgress(levelMode, levelNo + 1);
+
+		if(starPercent < starPercents[0])
+		{
+			if(nextLevelProgress.locked == true)
+			{
+				UICont.DisableNextButton();
+				return;
+			}
+		}
+
 		nextLevelProgress.locked = false;
 
 		ProgressController.SaveProgress(nextLevelProgress);
