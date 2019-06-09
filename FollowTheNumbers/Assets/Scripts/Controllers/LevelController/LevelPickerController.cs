@@ -16,7 +16,10 @@ public class LevelPickerController : MonoBehaviour
 	public GameObject horScrollSnapGO;
 	public Transform levelPickerPanel;
 	Transform contentObject;
-    public Color levelPickerHiddenCards;
+
+	// This is a temporary color for level picker cards.
+	// Old one is missing because all inspector variables reset.
+	private Color levelPickerHiddenCards = new Color(255, 254, 244);
 
 
     int countOfLevel;
@@ -32,7 +35,7 @@ public class LevelPickerController : MonoBehaviour
 	public void LoadLevels()
 	{
 		// Destroy old horizontal scrool snap go.
-		Destroy(horScrollSnapGO);
+		DestroyImmediate(horScrollSnapGO, true);
 
 		levelMode = DataTransfer.levelMode;
 		levels = GetLevels(levelMode);
