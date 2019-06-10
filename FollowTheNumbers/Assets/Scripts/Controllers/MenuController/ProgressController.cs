@@ -43,9 +43,9 @@ public static class ProgressController
 		string progressKey = string.Format("{0}~{1}", levelMode, levelNumber);
 
 		float starPercent = 0.0f;
-		float bestTime    = float.MaxValue;
-		int   bestTry     = int.MaxValue;
-		int   bestCount   = int.MinValue;
+		float bestTime    = 0.0f;
+		int   bestTry     = 0;
+		int   bestCount   = 0;
 		bool  completed   = false;
 		bool  locked      = true;
 
@@ -54,6 +54,8 @@ public static class ProgressController
 		{
 			string progressValue = PlayerPrefs.GetString(progressKey);
 			string[] progressArr = progressValue.Split('~');
+
+			Debug.Log(progressValue);
 
 			starPercent = float.Parse(progressArr[0]);
 			bestTime    = float.Parse(progressArr[1]);
